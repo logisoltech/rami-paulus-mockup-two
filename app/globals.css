@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --muted: #71717a;
+  --subtle: #a1a1aa;
+  --border: #e4e4e7;
+  --surface: #fafafa;
+  --inverse: #09090b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+  --color-inverse: var(--inverse);
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-playfair);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #e4e4e7;
+  color: var(--foreground);
+}
+
+.hero-glow {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% -10%, rgba(9, 9, 11, 0.04), transparent),
+    radial-gradient(ellipse 40% 30% at 100% 0%, rgba(9, 9, 11, 0.03), transparent);
+}
+
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--foreground);
+  color: var(--background);
+  will-change: transform;
+}
+
+.site-loader--done {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+html:not(.loader-complete) .site-content .reveal-nav,
+html:not(.loader-complete) .site-content .reveal-hero {
+  opacity: 0;
+}
+
+.loader-counter {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 2;
+  font-family: ui-monospace, monospace;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  opacity: 0;
+}
+
+.loader-ring {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--background) 12%, transparent);
+}
+
+.loader-ring-outer {
+  width: min(62vw, 420px);
+  height: min(62vw, 420px);
+}
+
+.loader-ring-inner {
+  width: min(48vw, 320px);
+  height: min(48vw, 320px);
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--background) 18%, transparent);
+}
+
+.loader-inner {
+  position: relative;
+  z-index: 1;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+
+.loader-word {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.04em;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.loader-letter {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+}
+
+.loader-letter span {
+  display: inline-block;
+}
+
+.loader-line {
+  width: min(280px, 60vw);
+  height: 1px;
+  margin: 2rem auto 0;
+  transform-origin: left center;
+  background: color-mix(in srgb, var(--background) 28%, transparent);
+}
+
+.loader-sub {
+  margin-top: 1.25rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--background) 52%, transparent);
+}
+
+.loader-progress {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: color-mix(in srgb, var(--background) 15%, transparent);
+}
+
+.loader-progress-fill {
+  height: 100%;
+  transform-origin: left center;
+  background: var(--background);
+}
+
+.site-content {
+  min-height: 100vh;
+}
