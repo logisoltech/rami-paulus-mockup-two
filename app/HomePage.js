@@ -124,10 +124,10 @@ export default function HomePage() {
               </p>
 
               <div className="reveal-hero mt-12 max-w-xl border-l border-foreground/30 pl-6 lg:pl-8">
-                <p className="font-serif text-[1.125rem] font-normal leading-[1.55] tracking-[-0.01em] text-muted lg:text-[1.25rem]">
+                <p className="font-serif text-[1.125rem] font-bold leading-[1.55] tracking-[-0.01em] text-muted lg:text-[1.25rem]">
                   Because in ABA, cleanliness is not cosmetic.
                 </p>
-                <p className="mt-3 font-serif text-[1.375rem] font-medium leading-[1.35] tracking-[-0.02em] text-foreground lg:text-[1.625rem]">
+                <p className="mt-3 font-serif text-[1.375rem] font-bold leading-[1.35] tracking-[-0.02em] text-foreground lg:text-[1.625rem]">
                   It is emotional infrastructure.
                 </p>
               </div>
@@ -150,43 +150,61 @@ export default function HomePage() {
           </Container>
         </section>
 
-        <section className="py-24 lg:py-32">
+        <section className="bg-[#F3F3F3] py-24 lg:py-32">
           <Container>
             <SectionTag number="01">The Real Problem</SectionTag>
 
-            <div className="max-w-3xl">
-              <FadeIn>
-                <h2 className="font-serif text-3xl font-semibold tracking-tight text-foreground lg:text-4xl">
-                  When the environment slips, everyone feels it.
-                </h2>
-                <p className="mt-6 text-lg leading-relaxed text-muted">
-                  Every ABA clinic operates under constant emotional and
-                  operational pressure.
-                </p>
-              </FadeIn>
+            <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14">
+              <div className="max-w-xl">
+                <FadeIn>
+                  <h2 className="font-serif text-3xl font-semibold tracking-tight text-foreground lg:text-4xl">
+                    When the environment slips, everyone feels it.
+                  </h2>
+                  <p className="mt-6 text-lg leading-relaxed text-muted">
+                    Every ABA clinic operates under constant emotional and
+                    operational pressure.
+                  </p>
+                </FadeIn>
 
-              <StaggerFadeIn
-                as="ul"
-                className="mt-12 grid grid-cols-1 gap-x-12 gap-y-5 sm:grid-cols-2"
+                <StaggerFadeIn
+                  as="ul"
+                  className="mt-12 grid grid-cols-1 gap-y-5"
+                >
+                  {[
+                    "Staff nervous systems stay elevated.",
+                    "Parents quietly lose confidence.",
+                    "Children become harder to regulate.",
+                    "Leadership gets pulled into noise instead of growth.",
+                  ].map((line) => (
+                    <li
+                      key={line}
+                      data-stagger-item
+                      className="flex gap-3 text-base font-medium leading-relaxed tracking-tight text-foreground"
+                    >
+                      <span aria-hidden className="mt-0.5 shrink-0 text-foreground">
+                        <Check className="h-4 w-4 mt-1" strokeWidth={2.5} />
+                      </span>
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </StaggerFadeIn>
+              </div>
+
+              <FadeIn
+                delay={0}
+                y={20}
+                start="top 95%"
+                className="relative w-full"
               >
-                {[
-                  "Staff nervous systems stay elevated.",
-                  "Parents quietly lose confidence.",
-                  "Children become harder to regulate.",
-                  "Leadership gets pulled into noise instead of growth.",
-                ].map((line) => (
-                  <li
-                    key={line}
-                    data-stagger-item
-                    className="flex gap-3 text-base font-medium leading-relaxed tracking-tight text-foreground"
-                  >
-                    <span aria-hidden className="mt-0.5 shrink-0 text-foreground">
-                      <Check className="h-4 w-4 mt-1" strokeWidth={2.5} />
-                    </span>
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </StaggerFadeIn>
+                <Image
+                  src="/img-2.jpeg"
+                  alt="Clinic environment"
+                  width={840}
+                  height={716}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="h-auto w-full object-contain"
+                />
+              </FadeIn>
             </div>
           </Container>
         </section>
