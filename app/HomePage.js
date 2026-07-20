@@ -113,7 +113,7 @@ export default function HomePage() {
 
             <div className="reveal-hero relative -mt-28 aspect-square w-[calc(100%+1.5rem)] max-h-[min(85vh,720px)] -translate-y-24 overflow-hidden sm:-mr-0 sm:w-full lg:-mt-40 lg:aspect-auto lg:h-[min(85vh,720px)] lg:-mr-10 lg:w-[calc(100%+2.5rem)] lg:-translate-y-36">
               <Image
-                src="/hero-img.jpg"
+                src="/hero-image-svg.svg"
                 alt="Calm, consistent clinic environment for a growing ABA organization"
                 fill
                 priority
