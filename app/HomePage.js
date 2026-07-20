@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { Check } from "lucide-react";
+import { Check, X } from "lucide-react";
 import FadeIn from "./components/gsap/FadeIn";
 import SiteLoader from "./components/gsap/SiteLoader";
 import StaggerFadeIn from "./components/gsap/StaggerFadeIn";
+import SiteHeader from "./components/SiteHeader";
 
 function Container({ children, className = "" }) {
   return (
@@ -60,11 +61,11 @@ function CTAGroup({ dark = false }) {
   const divider = dark ? "text-zinc-500" : "text-subtle";
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-      <PrimaryButton href="#onboarding" dark={dark}>
+      <PrimaryButton href="/onboarding" dark={dark}>
         Apply for Onboarding
       </PrimaryButton>
       {/* <span className={`hidden text-sm ${divider} sm:block`}>or</span> */}
-      <SecondaryButton href="#review" dark={dark}>
+      <SecondaryButton href="/request-operator-review" dark={dark}>
         Request an Operator Review
       </SecondaryButton>
     </div>
@@ -74,50 +75,23 @@ function CTAGroup({ dark = false }) {
 export default function HomePage() {
   return (
     <SiteLoader>
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-        <Container className="flex h-16 items-center justify-between">
-          <a href="/" className="reveal-nav inline-flex items-center">
-            <Image
-              src="/logo-asset1-8.png"
-              alt="We Clean ABA"
-              width={160}
-              height={28}
-              priority
-              className="h-4 w-auto object-contain sm:h-5"
-            />
-          </a>
-          <nav className="flex items-center gap-8">
-            <a
-              href="#onboarding"
-              className="reveal-nav hidden text-sm text-muted transition-colors hover:text-foreground sm:block"
-            >
-              Onboarding
-            </a>
-            <a
-              href="#review"
-              className="reveal-nav text-sm text-muted transition-colors hover:text-foreground"
-            >
-              Review
-            </a>
-          </nav>
-        </Container>
-      </header>
+      <SiteHeader reveal />
 
       <main>
         <section id="hero" className="border-b border-border bg-white pt-16">
-          <Container className="grid min-h-[calc(100vh-4rem)] items-center gap-8 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 lg:py-20">
+          <Container className="grid min-h-[calc(100vh-4rem)] items-center gap-8 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:py-20">
             <div>
               <p className="reveal-hero mb-6 text-sm font-medium text-muted">
                 Environmental infrastructure for ABA
               </p>
 
-              <h1 className="reveal-hero font-serif text-[2.75rem] font-semibold leading-[1.08] tracking-[-0.01em] text-foreground sm:text-6xl lg:text-[3.5rem] lg:leading-[1.06]">
-                Controlled environments for
+              <h1 className="reveal-hero font-serif text-[3.15rem] font-semibold leading-[1.04] tracking-[-0.02em] text-foreground sm:text-6xl lg:text-[4.25rem] lg:leading-[1.04]">
+                Controlled environments
                 <br />
-                growing ABA organizations.
+                for growing ABA organizations.
               </h1>
 
-              <p className="reveal-hero mt-8 max-w-2xl text-lg leading-relaxed text-muted lg:text-xl">
+              <p className="reveal-hero mt-4 max-w-2xl text-base leading-relaxed text-muted lg:text-lg">
                 We help ABA operators create calmer, more consistent clinic
                 environments so staff stay regulated, parents stay confident, and
                 leadership stays focused on growth.
@@ -157,10 +131,10 @@ export default function HomePage() {
             <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14">
               <div className="max-w-xl">
                 <FadeIn>
-                  <h2 className="font-serif text-3xl font-semibold tracking-tight text-foreground lg:text-4xl">
+                  <h2 className="font-serif text-4xl font-semibold tracking-tight text-foreground lg:text-5xl lg:leading-tight">
                     When the environment slips, everyone feels it.
                   </h2>
-                  <p className="mt-6 text-lg leading-relaxed text-muted">
+                  <p className="mt-3 text-base leading-relaxed text-muted">
                     Every ABA clinic operates under constant emotional and
                     operational pressure.
                   </p>
@@ -181,8 +155,11 @@ export default function HomePage() {
                       data-stagger-item
                       className="flex gap-3 text-base font-medium leading-relaxed tracking-tight text-foreground"
                     >
-                      <span aria-hidden className="mt-0.5 shrink-0 text-foreground">
-                        <Check className="h-4 w-4 mt-1" strokeWidth={2.5} />
+                      <span
+                        aria-hidden
+                        className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-foreground"
+                      >
+                        <X className="h-3 w-3" strokeWidth={2.5} />
                       </span>
                       <span>{line}</span>
                     </li>
@@ -249,14 +226,14 @@ export default function HomePage() {
             <SectionTag number="03">Why We Exist</SectionTag>
 
             <FadeIn className="max-w-3xl">
-              <p className="font-serif text-2xl leading-relaxed text-muted lg:text-3xl lg:leading-relaxed">
+              <p className="font-serif text-3xl leading-snug text-muted lg:text-4xl lg:leading-snug">
                 Every ABA operator manages hundreds of variables they can&apos;t
                 control.{" "}
                 <span className="font-medium text-foreground">
                   The environment is one of the few they can.
                 </span>
               </p>
-              <p className="mt-4 font-sans text-lg leading-relaxed text-muted">
+              <p className="mt-3 font-sans text-base leading-relaxed text-muted">
                 We believe great clinical infrastructure depends on equally
                 strong environmental infrastructure.
               </p>
@@ -270,10 +247,10 @@ export default function HomePage() {
 
             <div className="max-w-5xl">
               <FadeIn>
-                <h2 className="max-w-3xl font-serif text-3xl font-semibold tracking-tight lg:text-4xl">
+                <h2 className="max-w-3xl font-serif text-4xl font-semibold tracking-tight lg:text-5xl lg:leading-tight">
                   Environmental infrastructure for calmer clinics.
                 </h2>
-                <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted">
+                <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted">
                   We build environmental infrastructure that creates calmer,
                   more consistent clinic environments.
                 </p>
@@ -281,7 +258,7 @@ export default function HomePage() {
 
               <StaggerFadeIn
                 as="ul"
-                className="mt-12 grid grid-cols-1 gap-x-10 gap-y-5 sm:grid-cols-2 lg:grid-cols-3"
+                className="mt-12 grid max-w-xl grid-cols-1 gap-y-5"
                 stagger={0.08}
               >
                 {[
@@ -297,8 +274,11 @@ export default function HomePage() {
                     data-stagger-item
                     className="flex gap-3 text-base font-medium leading-relaxed tracking-tight text-foreground"
                   >
-                    <span aria-hidden className="mt-0.5 shrink-0 text-foreground">
-                      <Check className="h-4 w-4 mt-1" strokeWidth={2.5} />
+                    <span
+                      aria-hidden
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-foreground"
+                    >
+                      <Check className="h-3 w-3" strokeWidth={2.5} />
                     </span>
                     <span>{item}</span>
                   </li>
@@ -313,15 +293,15 @@ export default function HomePage() {
             <SectionTag number="05">Built For Growing Organizations</SectionTag>
 
             <FadeIn className="max-w-4xl">
-              <p className="text-lg leading-relaxed text-muted">
+              <p className="text-base leading-relaxed text-muted lg:text-lg">
                 As organizations grow, environmental consistency becomes harder
                 to maintain.
               </p>
-              <p className="mt-8 font-serif text-2xl font-semibold leading-snug tracking-tight text-foreground lg:text-4xl lg:leading-snug">
+              <p className="mt-6 font-serif text-3xl font-semibold leading-snug tracking-tight text-foreground lg:text-5xl lg:leading-snug">
                 Without strong systems, every location slowly becomes its own
                 version of &ldquo;good enough.&rdquo;
               </p>
-              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted">
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted">
                 We help operators create consistency across every clinic they
                 oversee so growth doesn&apos;t come at the expense of quality.
               </p>
@@ -334,11 +314,11 @@ export default function HomePage() {
             <SectionTag number="06">Partnership</SectionTag>
 
             <FadeIn className="max-w-3xl">
-              <h2 className="font-serif text-3xl font-semibold tracking-tight lg:text-5xl lg:leading-tight">
+              <h2 className="font-serif text-4xl font-semibold tracking-tight lg:text-5xl lg:leading-tight">
                 We become part of the environmental infrastructure behind your
                 clinics.
               </h2>
-              <p className="mt-8 text-lg leading-relaxed text-muted lg:text-xl">
+              <p className="mt-4 text-base leading-relaxed text-muted lg:text-lg">
                 The team responsible for helping your environments
                 remain calm, consistent, and operationally dependable as your
                 organization grows.
@@ -398,7 +378,7 @@ export default function HomePage() {
         </section>
 
         <section
-          id="onboarding"
+          id="begin"
           className="border-t border-border bg-foreground py-24 text-background lg:py-32 [&_.text-muted]:text-zinc-400 [&_.text-subtle]:text-zinc-500 [&_.bg-border]:bg-zinc-800 [&_.border-border]:border-zinc-800"
         >
           <Container>
@@ -406,11 +386,11 @@ export default function HomePage() {
 
             <div className="grid gap-12 lg:grid-cols-2 lg:items-end lg:gap-24">
               <FadeIn>
-                <h2 className="font-serif text-3xl font-semibold tracking-tight lg:text-5xl lg:leading-tight">
+                <h2 className="font-serif text-4xl font-semibold tracking-tight lg:text-5xl lg:leading-tight">
                   We intentionally partner with only a handful of multi-clinic
                   organizations each year.
                 </h2>
-                <p className="mt-6 mb-6 text-lg leading-relaxed text-zinc-400">
+                <p className="mt-4 mb-6 text-base leading-relaxed text-zinc-400 lg:text-lg">
                   Because protecting the standard matters more than accelerating
                   growth.
                 </p>
