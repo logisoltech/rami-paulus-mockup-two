@@ -171,15 +171,15 @@ export default function HomePage() {
                 delay={0}
                 y={20}
                 start="top 95%"
-                className="relative w-full"
+                className="relative mt-12 w-full"
               >
                 <Image
-                  src="/img-2.jpeg"
+                  src="/boxed-2.svg"
                   alt="Clinic environment"
-                  width={840}
-                  height={716}
+                  width={680}
+                  height={460}
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="h-auto w-full object-contain"
+                  className="h-auto w-full origin-center scale-110 object-contain lg:scale-125"
                 />
               </FadeIn>
             </div>
