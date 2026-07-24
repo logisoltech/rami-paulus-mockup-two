@@ -127,7 +127,7 @@ export default function HomePage() {
                   <h2 className="font-serif text-4xl font-semibold tracking-tight text-foreground lg:text-5xl lg:leading-tight">
                     When the environment slips, everyone feels it.
                   </h2>
-                  <p className="mt-3 text-base leading-relaxed text-muted">
+                  <p className="mt-3 text-sm leading-snug text-zinc-700">
                     Every ABA clinic operates under constant emotional and
                     operational pressure.
                   </p>
@@ -135,7 +135,7 @@ export default function HomePage() {
 
                 <StaggerFadeIn
                   as="ul"
-                  className="mt-12 grid grid-cols-1 gap-y-5"
+                  className="mt-7 grid grid-cols-1 gap-y-5"
                 >
                   {[
                     "Staff nervous systems stay elevated.",
@@ -146,13 +146,13 @@ export default function HomePage() {
                     <li
                       key={line}
                       data-stagger-item
-                      className="flex gap-3 text-base font-medium leading-relaxed tracking-tight text-foreground"
+                      className="flex gap-2.5 text-sm font-medium leading-snug tracking-tight text-foreground"
                     >
                       <span
                         aria-hidden
-                        className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-foreground"
+                        className="mt-0.5 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full border border-foreground"
                       >
-                        <X className="h-3 w-3" strokeWidth={2.5} />
+                        <X className="h-2 w-2" strokeWidth={3} />
                       </span>
                       <span>{line}</span>
                     </li>
@@ -184,7 +184,7 @@ export default function HomePage() {
             <SectionTag number="02">The Environment</SectionTag>
 
             <FadeIn>
-              <p className="text-lg text-zinc-400">Your environment is either:</p>
+              <p className="text-base text-zinc-400">Your environment is either:</p>
             </FadeIn>
 
             <StaggerFadeIn
@@ -226,7 +226,7 @@ export default function HomePage() {
                   The environment is one of the few they can.
                 </span>
               </p>
-              <p className="mt-3 font-sans text-base leading-relaxed text-muted">
+              <p className="mt-3 font-sans text-sm leading-snug text-zinc-700">
                 We believe great clinical infrastructure depends on equally
                 strong environmental infrastructure.
               </p>
@@ -243,7 +243,7 @@ export default function HomePage() {
                 <h2 className="max-w-3xl font-serif text-4xl font-semibold tracking-tight lg:text-5xl lg:leading-tight">
                   Environmental infrastructure for calmer clinics.
                 </h2>
-                <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted">
+                <p className="mt-3 max-w-3xl text-sm leading-snug text-zinc-700">
                   We build environmental infrastructure that creates calmer,
                   more consistent clinic environments.
                 </p>
@@ -251,27 +251,27 @@ export default function HomePage() {
 
               <StaggerFadeIn
                 as="ul"
-                className="mt-12 grid max-w-xl grid-cols-1 gap-y-5"
+                className="mt-7 grid max-w-xl grid-cols-1 gap-y-5"
                 stagger={0.08}
               >
                 {[
-                  "environments that staff trust",
-                  "environments that parents feel confident in",
-                  "consistency across every clinic",
-                  "clear accountability",
-                  "fewer operational distractions",
-                  "more capacity for leadership to focus on growth",
+                  "Environments that staff trust",
+                  "Environments that parents feel confident in",
+                  "Consistency across every clinic",
+                  "Clear accountability",
+                  "Fewer operational distractions",
+                  "More capacity for leadership to focus on growth",
                 ].map((item) => (
                   <li
                     key={item}
                     data-stagger-item
-                    className="flex gap-3 text-base font-medium leading-relaxed tracking-tight text-foreground"
+                    className="flex gap-2.5 text-sm font-medium leading-snug tracking-tight text-foreground"
                   >
                     <span
                       aria-hidden
-                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-foreground"
+                      className="mt-0.5 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full border border-foreground"
                     >
-                      <Check className="h-3 w-3" strokeWidth={2.5} />
+                      <Check className="h-2 w-2" strokeWidth={3} />
                     </span>
                     <span>{item}</span>
                   </li>
@@ -286,7 +286,7 @@ export default function HomePage() {
             <SectionTag number="05">Built For Growing Organizations</SectionTag>
 
             <FadeIn className="max-w-4xl">
-              <p className="text-base leading-relaxed text-muted lg:text-lg">
+              <p className="text-sm leading-snug text-zinc-700 lg:text-base">
                 As organizations grow, environmental consistency becomes harder
                 to maintain.
               </p>
@@ -294,7 +294,7 @@ export default function HomePage() {
                 Without strong systems, every location slowly becomes its own
                 version of &ldquo;good enough.&rdquo;
               </p>
-              <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted">
+              <p className="mt-4 max-w-3xl text-sm leading-snug text-zinc-700">
                 We help operators create consistency across every clinic they
                 oversee so growth doesn&apos;t come at the expense of quality.
               </p>
@@ -311,7 +311,7 @@ export default function HomePage() {
                 We become part of the environmental infrastructure behind your
                 clinics.
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-muted lg:text-lg">
+              <p className="mt-4 text-sm leading-snug text-zinc-700 lg:text-base">
                 The team responsible for helping your environments
                 remain calm, consistent, and operationally dependable as your
                 organization grows.
@@ -383,7 +383,7 @@ export default function HomePage() {
                   We intentionally partner with only a handful of multi-clinic
                   organizations each year.
                 </h2>
-                <p className="mt-4 mb-6 text-base leading-relaxed text-zinc-400 lg:text-lg">
+                <p className="mt-4 mb-6 text-sm leading-snug text-zinc-400 lg:text-base">
                   Because protecting the standard matters more than accelerating
                   growth.
                 </p>
