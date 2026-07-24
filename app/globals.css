@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #09090b;
-  --muted: #71717a;
+  --muted: #52525b;
   --subtle: #a1a1aa;
   --border: #e4e4e7;
   --surface: #fafafa;
@@ -18,7 +18,7 @@
   --color-border: var(--border);
   --color-surface: var(--surface);
   --color-inverse: var(--inverse);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-montserrat);
   --font-serif: var(--font-playfair);
 }
 
@@ -30,9 +30,19 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-serif {
+  font-family: var(--font-playfair), Georgia, serif;
 }
 
 ::selection {

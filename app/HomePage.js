@@ -31,7 +31,7 @@ function PrimaryButton({ href, children, dark = false }) {
   return (
     <a
       href={href}
-      className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-opacity hover:opacity-80 ${
+      className={`inline-flex items-center justify-center whitespace-nowrap rounded-none px-6 py-3 text-sm font-medium transition-opacity hover:opacity-80 ${
         dark
           ? "bg-background text-foreground"
           : "bg-foreground text-background"
@@ -46,7 +46,7 @@ function SecondaryButton({ href, children, dark = false }) {
   return (
     <a
       href={href}
-      className={`inline-flex items-center justify-center rounded-full border px-6 py-3 text-sm font-medium transition-colors ${
+      className={`inline-flex items-center justify-center whitespace-nowrap rounded-none border px-6 py-3 text-sm font-medium transition-colors ${
         dark
           ? "border-zinc-700 text-background hover:bg-zinc-900"
           : "border-border text-foreground hover:bg-surface"
@@ -79,47 +79,40 @@ export default function HomePage() {
 
       <main>
         <section id="hero" className="border-b border-border bg-white pt-16">
-          <Container className="grid min-h-[calc(100vh-4rem)] items-center gap-8 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:py-20">
-            <div>
-              <p className="reveal-hero mb-6 text-sm font-medium text-muted">
-                Environmental infrastructure for ABA
-              </p>
+          <Container className="flex min-h-[calc(100vh-4rem)] flex-col justify-center py-20 lg:py-28">
+            <p className="reveal-hero mb-6 font-sans text-xs font-medium uppercase tracking-[0.18em] text-muted">
+              Environmental infrastructure for ABA
+            </p>
 
-              <h1 className="reveal-hero font-serif text-[3.15rem] font-semibold leading-[1.04] tracking-[-0.02em] text-foreground sm:text-6xl lg:text-[4.25rem] lg:leading-[1.04]">
-                Controlled environments
-                <br />
-                for growing ABA organizations.
-              </h1>
+            <h1
+              className="reveal-hero text-[3.25rem] font-normal leading-[1.04] tracking-[-0.02em] text-foreground sm:text-7xl lg:text-[5.75rem] lg:leading-[1.02]"
+              style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+            >
+              Controlled Environments
+              <br />
+              For Growing ABA
+              <br />
+              Organizations.
+            </h1>
 
-              <p className="reveal-hero mt-4 max-w-2xl text-base leading-relaxed text-muted lg:text-lg">
+            <div className="reveal-hero mt-10 grid max-w-5xl gap-10 sm:grid-cols-2 lg:ml-[min(24vw,16rem)] lg:mt-14 lg:max-w-4xl lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:gap-14">
+              <p className="font-sans text-base leading-relaxed text-muted lg:text-[1.0625rem] lg:leading-[1.7]">
                 We help ABA operators create calmer, more consistent clinic
-                environments so staff stay regulated, parents stay confident, and
-                leadership stays focused on growth.
+                environments so staff stay regulated, parents stay confident,
+                and leadership stays focused on growth.
               </p>
 
-              <div className="reveal-hero mt-12 max-w-xl border-l border-foreground/30 pl-6 lg:pl-8">
-                <p className="font-serif text-[1.125rem] font-bold leading-[1.55] tracking-[-0.01em] text-muted lg:text-[1.25rem]">
+              <div className="min-w-0">
+                <p className="border-l border-foreground/30 pl-6 font-serif text-[1.125rem] font-bold leading-[1.55] tracking-[-0.01em] text-muted sm:whitespace-nowrap lg:pl-8 lg:text-[1.25rem]">
                   Because in ABA, cleanliness is not cosmetic.
                 </p>
-                <p className="mt-3 font-serif text-[1.375rem] font-bold leading-[1.35] tracking-[-0.02em] text-foreground lg:text-[1.625rem]">
+                <p className="mt-3 pl-6 font-serif text-[1.375rem] font-bold leading-[1.35] tracking-[-0.02em] text-foreground sm:whitespace-nowrap lg:pl-8 lg:text-[1.625rem]">
                   It is emotional infrastructure.
                 </p>
+                <div className="mt-8 pl-6 lg:pl-8">
+                  <CTAGroup />
+                </div>
               </div>
-
-              <div className="reveal-hero mt-12">
-                <CTAGroup />
-              </div>
-            </div>
-
-            <div className="reveal-hero relative -mt-28 aspect-square w-[calc(100%+1.5rem)] max-h-[min(85vh,720px)] -translate-y-24 overflow-hidden sm:-mr-0 sm:w-full lg:-mt-40 lg:aspect-auto lg:h-[min(85vh,720px)] lg:-mr-10 lg:w-[calc(100%+2.5rem)] lg:-translate-y-36">
-              <Image
-                src="/hero-image-svg.svg"
-                alt="Calm, consistent clinic environment for a growing ABA organization"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                className="object-contain object-center scale-110"
-              />
             </div>
           </Container>
         </section>
