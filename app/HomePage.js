@@ -135,7 +135,7 @@ export default function HomePage() {
 
                 <StaggerFadeIn
                   as="ul"
-                  className="mt-7 grid grid-cols-1 gap-y-5"
+                  className="mt-7 grid grid-cols-1 gap-y-2"
                 >
                   {[
                     "Staff nervous systems stay elevated.",
@@ -251,7 +251,7 @@ export default function HomePage() {
 
               <StaggerFadeIn
                 as="ul"
-                className="mt-7 grid max-w-xl grid-cols-1 gap-y-5"
+                className="mt-7 grid max-w-xl grid-cols-1 gap-y-2"
                 stagger={0.08}
               >
                 {[
