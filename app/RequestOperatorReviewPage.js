@@ -79,13 +79,13 @@ const SYMPTOMS = [
 ];
 
 const LOOK_FOR = [
-  "environmental consistency across locations",
-  "operational friction points",
-  "communication gaps",
-  "quality control systems",
-  "flooring and restroom standards",
-  "supply organization",
-  "overall environmental stability",
+  "Environmental consistency across locations",
+  "Operational friction points",
+  "Communication gaps",
+  "Quality control systems",
+  "Flooring and restroom standards",
+  "Supply organization",
+  "Overall environmental stability",
 ];
 
 const WALK_AWAY = [

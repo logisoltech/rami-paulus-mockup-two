@@ -69,7 +69,7 @@ const STEPS = [
   },
 ];
 
-const SIGNALS = ["structure", "calm", "professionalism", "consistency"];
+const SIGNALS = ["Structure", "Calm", "Professionalism", "Consistency"];
 
 const BEFORES = [
   "Before therapy begins.",
