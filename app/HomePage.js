@@ -9,7 +9,7 @@ import SiteHeader from "./components/SiteHeader";
 
 function Container({ children, className = "" }) {
   return (
-    <div className={`mx-auto w-full max-w-6xl px-6 lg:px-10 ${className}`}>
+    <div className={`mx-auto w-full max-w-7xl px-6 lg:px-10 ${className}`}>
       {children}
     </div>
   );
@@ -31,7 +31,7 @@ function PrimaryButton({ href, children, dark = false }) {
   return (
     <a
       href={href}
-      className={`inline-flex items-center justify-center whitespace-nowrap rounded-none px-6 py-3 text-sm font-medium transition-opacity hover:opacity-80 ${
+      className={`inline-flex min-w-[13.5rem] items-center justify-center whitespace-nowrap rounded-none px-8 py-3.5 text-[11px] font-medium uppercase tracking-[0.12em] transition-opacity hover:opacity-80 ${
         dark
           ? "bg-background text-foreground"
           : "bg-foreground text-background"
@@ -46,10 +46,10 @@ function SecondaryButton({ href, children, dark = false }) {
   return (
     <a
       href={href}
-      className={`inline-flex items-center justify-center whitespace-nowrap rounded-none border px-6 py-3 text-sm font-medium transition-colors ${
+      className={`inline-flex min-w-[22rem] items-center justify-center whitespace-nowrap rounded-none border px-12 py-3.5 text-[11px] font-medium uppercase tracking-[0.12em] transition-colors ${
         dark
           ? "border-zinc-700 text-background hover:bg-zinc-900"
-          : "border-border text-foreground hover:bg-surface"
+          : "border-foreground text-foreground hover:bg-surface"
       }`}
     >
       {children}
@@ -58,16 +58,14 @@ function SecondaryButton({ href, children, dark = false }) {
 }
 
 function CTAGroup({ dark = false }) {
-  const divider = dark ? "text-zinc-500" : "text-subtle";
   return (
-    <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+      <SecondaryButton href="/request-operator-review" dark={dark}>
+        Request an Operator Review →
+      </SecondaryButton>
       <PrimaryButton href="/onboarding" dark={dark}>
         Apply for Onboarding
       </PrimaryButton>
-      {/* <span className={`hidden text-sm ${divider} sm:block`}>or</span> */}
-      <SecondaryButton href="/request-operator-review" dark={dark}>
-        Request an Operator Review
-      </SecondaryButton>
     </div>
   );
 }
@@ -80,13 +78,13 @@ export default function HomePage() {
       <main>
         <section id="hero" className="border-b border-border bg-white pt-16">
           <Container className="flex min-h-[calc(100vh-4rem)] flex-col justify-center py-20 lg:py-28">
-            <p className="reveal-hero mb-6 font-sans text-xs font-medium uppercase tracking-[0.18em] text-muted">
-              Environmental infrastructure for ABA
+            <p className="reveal-hero mb-8 font-sans text-[11px] font-normal uppercase tracking-[0.18em] text-zinc-900">
+              Environmental Infrastructure for ABA
             </p>
 
             <h1
-              className="reveal-hero text-[3.25rem] font-normal leading-[1.04] tracking-[-0.02em] text-foreground sm:text-7xl lg:text-[5.75rem] lg:leading-[1.02]"
-              style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+              className="reveal-hero w-full text-[3.5rem] font-normal leading-[1.04] tracking-[-0.02em] text-black sm:text-7xl lg:text-[6.25rem] lg:leading-[1.01]"
+              style={{ fontFamily: 'Georgia, "Times New Roman", Times, serif' }}
             >
               Controlled Environments
               <br />
@@ -95,24 +93,23 @@ export default function HomePage() {
               Organizations.
             </h1>
 
-            <div className="reveal-hero mt-10 grid max-w-5xl gap-10 sm:grid-cols-2 lg:ml-[min(24vw,16rem)] lg:mt-14 lg:max-w-4xl lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:gap-14">
-              <p className="font-sans text-base leading-relaxed text-muted lg:text-[1.0625rem] lg:leading-[1.7]">
+            <div className="reveal-hero mt-12 ml-2 grid max-w-3xl gap-6 sm:ml-3 sm:grid-cols-[1.45fr_0.85fr] sm:gap-0 lg:mt-14 lg:ml-4">
+              <p className="font-sans text-lg leading-[1.55] text-black sm:pr-4 lg:text-[1.1875rem] lg:leading-[1.55]">
                 We help ABA operators create calmer, more consistent clinic
                 environments so staff stay regulated, parents stay confident,
                 and leadership stays focused on growth.
               </p>
 
-              <div className="min-w-0">
-                <p className="border-l border-foreground/30 pl-6 font-serif text-[1.125rem] font-bold leading-[1.55] tracking-[-0.01em] text-muted sm:whitespace-nowrap lg:pl-8 lg:text-[1.25rem]">
-                  Because in ABA, cleanliness is not cosmetic.
-                </p>
-                <p className="mt-3 pl-6 font-serif text-[1.375rem] font-bold leading-[1.35] tracking-[-0.02em] text-foreground sm:whitespace-nowrap lg:pl-8 lg:text-[1.625rem]">
-                  It is emotional infrastructure.
-                </p>
-                <div className="mt-8 pl-6 lg:pl-8">
-                  <CTAGroup />
-                </div>
-              </div>
+              <p className="border-t border-zinc-300 pt-6 font-sans text-lg leading-[1.55] text-black sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0 lg:text-[1.1875rem] lg:leading-[1.55]">
+                Because in ABA, cleanliness isn&apos;t cosmetic. It&apos;s{" "}
+                <span className="font-semibold text-black">
+                  emotional infrastructure.
+                </span>
+              </p>
+            </div>
+
+            <div className="reveal-hero mt-12">
+              <CTAGroup />
             </div>
           </Container>
         </section>
