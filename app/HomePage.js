@@ -82,7 +82,7 @@ export default function HomePage() {
               Environmental Infrastructure for ABA
             </p>
 
-            <h1 className="font-hero-georgia reveal-hero w-full text-[3.75rem] font-normal leading-[1.04] tracking-[-0.06em] text-black sm:text-8xl lg:text-[7rem] lg:leading-[1.01]">
+            <h1 className="font-hero-georgia reveal-hero w-full text-[3.75rem] font-normal leading-[0.90] tracking-[-0.06em] text-black sm:text-8xl lg:text-[7rem] lg:leading-[0.88]">
               Controlled Environments
               <br />
               For Growing ABA
