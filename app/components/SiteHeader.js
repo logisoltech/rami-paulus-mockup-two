@@ -10,8 +10,8 @@ export default function SiteHeader({ reveal = false }) {
     ? "reveal-nav text-[11px] font-normal uppercase tracking-[0.14em] text-zinc-600 transition-colors hover:text-foreground"
     : "text-[11px] font-normal uppercase tracking-[0.14em] text-zinc-600 transition-colors hover:text-foreground";
   const logoClass = reveal
-    ? "reveal-nav text-[11px] font-semibold uppercase tracking-[0.16em] text-black"
-    : "text-[11px] font-semibold uppercase tracking-[0.16em] text-black";
+    ? "reveal-nav text-[13px] font-semibold uppercase tracking-[0.16em] text-black"
+    : "text-[13px] font-semibold uppercase tracking-[0.16em] text-black";
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white">

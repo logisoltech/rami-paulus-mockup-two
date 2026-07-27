@@ -77,15 +77,12 @@ export default function HomePage() {
 
       <main>
         <section id="hero" className="border-b border-border bg-white pt-16">
-          <Container className="flex min-h-[calc(100vh-4rem)] flex-col justify-center py-20 lg:py-28">
+          <Container className="flex min-h-[calc(100vh-4rem)] flex-col justify-start pt-10 pb-20 lg:pt-12 lg:pb-28">
             <p className="reveal-hero mb-8 font-sans text-[11px] font-normal uppercase tracking-[0.18em] text-zinc-900">
               Environmental Infrastructure for ABA
             </p>
 
-            <h1
-              className="reveal-hero w-full text-[3.5rem] font-normal leading-[1.04] tracking-[-0.02em] text-black sm:text-7xl lg:text-[6.25rem] lg:leading-[1.01]"
-              style={{ fontFamily: 'Georgia, "Times New Roman", Times, serif' }}
-            >
+            <h1 className="font-hero-georgia reveal-hero w-full text-[3.5rem] font-normal leading-[1.04] tracking-[-0.02em] text-black sm:text-7xl lg:text-[6.25rem] lg:leading-[1.01]">
               Controlled Environments
               <br />
               For Growing ABA

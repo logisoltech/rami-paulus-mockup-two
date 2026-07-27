@@ -45,6 +45,10 @@ h6,
   font-family: var(--font-playfair), Georgia, serif;
 }
 
+.font-hero-georgia {
+  font-family: Georgia, "Times New Roman", Times, serif !important;
+}
+
 ::selection {
   background: #e4e4e7;
   color: var(--foreground);
