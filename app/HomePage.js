@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Check, X } from "lucide-react";
+import { Check } from "lucide-react";
 import FadeIn from "./components/gsap/FadeIn";
 import SiteLoader from "./components/gsap/SiteLoader";
 import StaggerFadeIn from "./components/gsap/StaggerFadeIn";
@@ -57,9 +57,15 @@ function SecondaryButton({ href, children, dark = false }) {
   );
 }
 
-function CTAGroup({ dark = false }) {
+function CTAGroup({ dark = false, stacked = false }) {
   return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+    <div
+      className={
+        stacked
+          ? "flex flex-col items-center gap-3"
+          : "flex flex-col gap-3 sm:flex-row sm:items-center"
+      }
+    >
       <SecondaryButton href="/request-operator-review" dark={dark}>
         Request an Operator Review →
       </SecondaryButton>
@@ -111,65 +117,88 @@ export default function HomePage() {
           </Container>
         </section>
 
-        <section className="bg-[#F3F3F3] py-24 lg:py-32">
+        <section className="bg-black py-24 text-white lg:py-32">
           <Container>
-            <SectionTag number="01">The Real Problem</SectionTag>
+            <FadeIn className="mb-12 flex items-center gap-4" y={16} duration={0.7}>
+              <span className="text-[11px] font-normal uppercase tracking-[0.18em] text-zinc-400">
+                The Real Problem
+              </span>
+              <span className="h-px flex-1 bg-zinc-700" />
+            </FadeIn>
 
-            <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14">
-              <div className="max-w-xl">
-                <FadeIn>
-                  <h2 className="font-serif text-4xl font-semibold tracking-tight text-foreground lg:text-5xl lg:leading-tight">
-                    When the environment slips, everyone feels it.
-                  </h2>
-                  <p className="mt-3 text-sm leading-snug text-zinc-700">
-                    Every ABA clinic operates under constant emotional and
-                    operational pressure.
-                  </p>
-                </FadeIn>
+            <FadeIn className="mx-auto w-full max-w-3xl">
+              <Image
+                src="/your_environment_diagram_poppins.svg"
+                alt="Your environment is either a stabilizing force or another source of stress"
+                width={568}
+                height={376}
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="h-auto w-full object-contain"
+              />
+            </FadeIn>
 
-                <StaggerFadeIn
-                  as="ul"
-                  className="mt-7 grid grid-cols-1 gap-y-2"
+            <FadeIn className="mx-auto mt-16 w-full max-w-6xl text-center lg:mt-20">
+              <p className="font-sans text-xs font-medium uppercase leading-[1.7] tracking-[0.08em] text-white sm:text-sm lg:text-[0.9375rem] lg:leading-[1.75] lg:tracking-[0.1em]">
+                ABA operators manage hundreds of variables they can&apos;t
+                control.
+                <br />
+                The environment is one of the few they can.
+                <br />
+                <span className="inline-block sm:whitespace-nowrap">
+                  We believe great clinical infrastructure depends on equally
+                  strong environmental infrastructure.
+                </span>
+              </p>
+            </FadeIn>
+          </Container>
+        </section>
+
+        <section className="border-b border-border bg-white py-24 lg:py-32">
+          <Container className="flex flex-col items-center text-center">
+            <FadeIn>
+              <h2 className="max-w-4xl font-serif text-3xl font-normal tracking-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight">
+                We create stability through consistency.
+              </h2>
+            </FadeIn>
+
+            <StaggerFadeIn
+              className="mt-14 flex max-w-5xl flex-col items-center gap-4 sm:mt-16 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-3 sm:gap-y-3 lg:mt-20 lg:gap-x-4"
+              stagger={0.08}
+              y={16}
+            >
+              {[
+                ["Controlled", "Environment"],
+                ["Staff", "Regulation"],
+                ["Higher", "Retention"],
+                ["Leadership", "Capacity"],
+              ].map(([first, second], index, arr) => (
+                <div
+                  key={`${first}-${second}`}
+                  data-stagger-item
+                  className="flex items-center gap-3 sm:gap-4"
                 >
-                  {[
-                    "Staff nervous systems stay elevated.",
-                    "Parents quietly lose confidence.",
-                    "Children become harder to regulate.",
-                    "Leadership gets pulled into noise instead of growth.",
-                  ].map((line) => (
-                    <li
-                      key={line}
-                      data-stagger-item
-                      className="flex gap-2.5 text-sm font-medium leading-snug tracking-tight text-foreground"
+                  <p className="font-sans text-[11px] uppercase tracking-[0.14em] text-black sm:text-xs lg:text-sm lg:tracking-[0.16em]">
+                    <span className="font-normal">{first}</span>{" "}
+                    <span className="font-bold">{second}</span>
+                  </p>
+                  {index < arr.length - 1 && (
+                    <span
+                      aria-hidden
+                      className="hidden text-zinc-400 sm:inline"
                     >
-                      <span
-                        aria-hidden
-                        className="mt-0.5 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full border border-foreground"
-                      >
-                        <X className="h-2 w-2" strokeWidth={3} />
-                      </span>
-                      <span>{line}</span>
-                    </li>
-                  ))}
-                </StaggerFadeIn>
-              </div>
+                      →
+                    </span>
+                  )}
+                </div>
+              ))}
+            </StaggerFadeIn>
 
-              <FadeIn
-                delay={0}
-                y={20}
-                start="top 95%"
-                className="relative mt-12 w-full"
-              >
-                <Image
-                  src="/boxed-2.svg"
-                  alt="Clinic environment"
-                  width={680}
-                  height={460}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="h-auto w-full origin-center scale-110 object-contain lg:scale-125"
-                />
-              </FadeIn>
-            </div>
+            <FadeIn className="mt-8 lg:mt-10">
+              <p className="font-sans text-sm leading-relaxed text-zinc-600 sm:whitespace-nowrap lg:text-base">
+                Environmental control isn&apos;t the outcome. It&apos;s the
+                starting point.
+              </p>
+            </FadeIn>
           </Container>
         </section>
 
@@ -366,42 +395,45 @@ export default function HomePage() {
 
         <section
           id="begin"
-          className="border-t border-border bg-foreground py-24 text-background lg:py-32 [&_.text-muted]:text-zinc-400 [&_.text-subtle]:text-zinc-500 [&_.bg-border]:bg-zinc-800 [&_.border-border]:border-zinc-800"
+          className="border-t border-border bg-white py-24 lg:py-32"
         >
           <Container>
-            <SectionTag number="08">Begin</SectionTag>
+            <FadeIn className="mb-16 flex items-center gap-4 lg:mb-20" y={16} duration={0.7}>
+              <span className="text-[11px] font-normal uppercase tracking-[0.18em] text-zinc-500">
+                Begin
+              </span>
+              <span className="h-px flex-1 bg-border" />
+            </FadeIn>
 
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-end lg:gap-24">
-              <FadeIn>
-                <h2 className="font-serif text-4xl font-semibold tracking-tight lg:text-5xl lg:leading-tight">
-                  We intentionally partner with only a handful of multi-clinic
-                  organizations each year.
-                </h2>
-                <p className="mt-4 mb-6 text-sm leading-snug text-zinc-400 lg:text-base">
-                  Because protecting the standard matters more than accelerating
-                  growth.
-                </p>
-                <CTAGroup dark />
+            <FadeIn className="mx-auto flex max-w-4xl flex-col items-center text-center">
+              <h2 className="font-serif text-3xl font-normal tracking-tight text-black sm:text-4xl lg:text-[2.75rem] lg:leading-[1.25]">
+                We intentionally partner with
+                <br />
+                only a handful of growing multi-clinic
+                <br />
+                organizations each year.
+              </h2>
 
-              </FadeIn>
+              <p className="mt-8 max-w-2xl font-sans text-[11px] font-normal uppercase tracking-[0.14em] text-black sm:text-xs lg:tracking-[0.16em]">
+                Because protecting the standard matters more than accelerating
+                our own growth.
+              </p>
 
-              {/* <FadeIn delay={0.12} id="review">
-              </FadeIn> */}
-            </div>
+              <div className="mt-12">
+                <CTAGroup stacked />
+              </div>
+            </FadeIn>
           </Container>
         </section>
       </main>
 
       <FadeIn as="footer" className="border-t border-border py-10" y={20}>
         <Container className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <a href="/" className="inline-flex items-center">
-            <Image
-              src="/logo-asset1-8.png"
-              alt="We Clean ABA"
-              width={160}
-              height={28}
-              className="h-4 w-auto object-contain"
-            />
+          <a
+            href="/"
+            className="text-[13px] font-semibold uppercase tracking-[0.16em] text-black"
+          >
+            We Clean ABA™
           </a>
           <p className="text-sm text-muted">
             © {new Date().getFullYear()} We Clean ABA. All rights reserved.

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="568" height="376" viewBox="0 0 568 376" role="img" aria-labelledby="title desc">
+  <title id="title">Your Environment decision diagram</title>
+  <desc id="desc">A black background branching diagram comparing a stabilizing force with another source of stress.</desc>
+
+  <rect width="568" height="376" fill="#000000"/>
+
+  <defs>
+    <style>
+      .text {
+        fill: #F2F2F0;
+        font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+        text-anchor: middle;
+      }
+      .top {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 2.2px;
+      }
+      .heading {
+        font-size: 12.5px;
+        font-weight: 700;
+        letter-spacing: 1.7px;
+      }
+      .or {
+        font-size: 9.5px;
+        font-weight: 400;
+        letter-spacing: 1.1px;
+        fill: #A8A8A5;
+      }
+      .body {
+        font-size: 10.7px;
+        font-weight: 500;
+        letter-spacing: 1.55px;
+      }
+      .line {
+        stroke: #858582;
+        stroke-width: 1.15;
+        fill: none;
+        vector-effect: non-scaling-stroke;
+        shape-rendering: geometricPrecision;
+      }
+    </style>
+  </defs>
+
+  <text class="text top" x="284" y="44">YOUR ENVIRONMENT</text>
+
+  <path class="line" d="M275 69 V116"/>
+  <path class="line" d="M124 129 H440"/>
+  <path class="line" d="M124 145 V166"/>
+  <path class="line" d="M439 145 V166"/>
+
+  <text class="text heading" x="124" y="190">A STABILIZING FORCE</text>
+  <text class="text or" x="272" y="191">(OR)</text>
+  <text class="text heading" x="439" y="190">ANOTHER SOURCE OF STRESS</text>
+
+  <path class="line" d="M124 206 V256"/>
+  <path class="line" d="M439 206 V256"/>
+
+  <g class="text body">
+    <text x="124" y="282">STAFF REGULATE</text>
+    <text x="124" y="302">PARENTS TRUST</text>
+    <text x="124" y="322">LEADERS FOCUS</text>
+    <text x="124" y="342">GROWTH ACCELERATES</text>
+
+    <text x="439" y="282">STAFF BURNOUT</text>
+    <text x="439" y="302">PARENTS QUESTION</text>
+    <text x="439" y="322">LEADERS REACT</text>
+    <text x="439" y="342">GROWTH STALLS</text>
+  </g>
+</svg>
