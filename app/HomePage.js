@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import FadeIn from "./components/gsap/FadeIn";
 import SiteLoader from "./components/gsap/SiteLoader";
 import StaggerFadeIn from "./components/gsap/StaggerFadeIn";
@@ -126,9 +126,14 @@ export default function HomePage() {
               <span className="h-px flex-1 bg-zinc-700" />
             </FadeIn>
 
-            <FadeIn className="mx-auto w-full max-w-3xl">
+            <FadeIn className="relative mx-auto w-full max-w-3xl">
+              <ArrowRight
+                aria-hidden
+                className="pointer-events-none absolute -left-10 top-[48%] h-6 w-6 -translate-y-1/2 text-white sm:-left-12"
+                strokeWidth={2}
+              />
               <Image
-                src="/your_environment_diagram_poppins.svg"
+                src="/your_environment_diagram_poppins.svg?v=4"
                 alt="Your environment is either a stabilizing force or another source of stress"
                 width={568}
                 height={376}
